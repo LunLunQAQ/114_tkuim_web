@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的網站</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- 自訂 CSS -->
+  <style>
+    .card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- 1. 導航列 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">蔡宗倫</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">首頁</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">關於</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">作品</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. Hero Section -->
+  <section id="home" class="py-5 bg-light">
+    <div class="container text-center">
+      <h1 class="display-4">哈囉！我是蔡宗倫</h1>
+      <p class="lead">歡迎來到我的網站</p>
+      <a href="#portfolio" class="btn btn-primary btn-lg">查看作品</a>
+      <a href="#contact" class="btn btn-outline-primary btn-lg">聯絡我</a>
+    </div>
+  </section>
+
+  <!-- 3. 關於我 -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">關於我</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center mb-4">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQekEXqpQDEcqarmB5UBTBInxzak1EJn_j9Zw&s" class="img-fluid rounded-circle" alt="個人照片">
+        </div>
+        <div class="col-md-6">
+          <h3 class="fw-bold">蔡宗倫</h3>
+          <p class="text-muted fs-5">資管3C</p>
+          <p>我是1位新手，目前正在學習 HTML、JAVA 和 Bootstrap。希望可以學到更多。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 技能展示 -->
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">我的技能</h2>
+      <div class="row">
+        <!-- 技能 1 -->
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body text-center">
+              <div style="font-size: 3rem;">📝</div>
+              <h5 class="card-title">HTML</h5>
+              <p class="card-text">網頁製作</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 技能 2 -->
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body text-center">
+              <div style="font-size: 3rem;">☕</div>
+              <h5 class="card-title">JAVA</h5>
+              <p class="card-text">程式設計</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 技能 3 -->
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body text-center">
+              <div style="font-size: 3rem;">🎨</div>
+              <h5 class="card-title">Bootstrap</h5>
+              <p class="card-text">響應式網頁框架</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- 5. 作品集 -->
+<section id="portfolio" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">🎨 我的作品集</h2>
+    <div class="row">
+      <!-- 作品 1 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=800&q=80" class="card-img-top portfolio-img" alt="作品1">
+          <div class="card-body text-center">
+            <h5 class="card-title">🌐 網頁作品一</h5>
+            <p class="card-text">這是我使用 HTML 製作的第一個網頁頁面，簡潔又實用！</p>
+            <a href="https://github.com/LunLunQAQ/114_tkuim_web/blob/main/aboutme.html" class="btn btn-primary" target="_blank">查看詳情 🚀</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 作品 2 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="data:image/png;base64,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" class="card-img-top portfolio-img" alt="作品2">
+          <div class="card-body text-center">
+            <h5 class="card-title">☕ JAVA 程式作品</h5>
+            <p class="card-text">這是我使用 Java 編寫的程式作品，展示基本邏輯與互動設計。</p>
+            <a href="https://github.com/LunLunQAQ/114_tkuim_web/blob/main/myfirsthtml.html" class="btn btn-primary" target="_blank">查看詳情 💻</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 作品 3 -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" class="card-img-top portfolio-img" alt="作品3">
+          <div class="card-body text-center">
+            <h5 class="card-title">📱 Bootstrap 響應式設計</h5>
+            <p class="card-text">使用 Bootstrap 製作的響應式網站，能自動適應手機與電腦螢幕。</p>
+            <a href="https://github.com/LunLunQAQ/114_tkuim_web/blob/main/example.html" class="btn btn-primary" target="_blank">查看詳情 🌟</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-img {
+    height: 300px;
+    object-fit: cover;
+  }
+</style>
+
+
+
+  <!-- 6. 聯絡表單 -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">聯絡我</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">姓名</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="subject" class="form-label">主旨</label>
+              <input type="text" class="form-control" id="subject" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="message" class="form-label">訊息</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">送出</button>
+          </form>
+          <p class="text-center mt-3">Email: <a href="mailto:zxcvbnm940127@gmail.com">zxcvbnm940127@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p>追蹤我：
+      <a href="https://www.facebook.com/cai.zong.lun.583659" class="text-white" target="_blank">Facebook</a> | 
+      <a href="https://www.instagram.com/lunlun_0127/" class="text-white" target="_blank">Instagram</a> | 
+      <a href="https://github.com/LunLunQAQ" class="text-white" target="_blank">GitHub</a>
+      
+    
+    <p>&copy; 2025 蔡宗倫. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
