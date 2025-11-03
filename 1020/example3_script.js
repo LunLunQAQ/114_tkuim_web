@@ -20,7 +20,6 @@ output += 'A - B = ' + (numA - numB) + '\n';
 output += 'A * B = ' + (numA * numB) + '\n';
 output += 'A / B = ' + (numA / numB) + '\n';
 
-//「餘數運算」
 output += 'A % B = ' + (numA % numB) + '（A 除以 B 的餘數）\n\n';
 
 // 比較運算

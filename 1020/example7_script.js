@@ -26,7 +26,6 @@ function bmiLevel(bmi) {
   return level;
 }
 
-// 延伸練習：判斷 BMI 是否在理想範圍（18.5–24）
 function isIdeal(bmi) {
   return bmi >= 18.5 && bmi < 24;
 }

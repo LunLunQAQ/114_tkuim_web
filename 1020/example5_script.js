@@ -1,7 +1,6 @@
 // example5_script.js
 // 以巢狀 for 產生九九乘法表
 
-// 延伸練習：輸入乘法範圍
 var startInput = prompt('請輸入乘法表開始數字 (1~9)：');
 var endInput = prompt('請輸入乘法表結束數字 (1~9)：');
 

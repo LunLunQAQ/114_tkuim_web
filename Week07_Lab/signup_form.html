@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>會員註冊表單</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <form id="signupForm" class="bg-white p-4 rounded shadow-sm mx-auto" style="max-width: 500px;" novalidate>
+      <h3 class="text-center mb-4">會員註冊</h3>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">姓名</label>
+        <input type="text" class="form-control" id="name" required aria-describedby="nameError">
+        <div id="nameError" class="text-danger small"></div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required aria-describedby="emailError">
+        <div id="emailError" class="text-danger small"></div>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">手機</label>
+        <input type="text" class="form-control" id="phone" required maxlength="10" aria-describedby="phoneError">
+        <div id="phoneError" class="text-danger small"></div>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">密碼</label>
+        <input type="password" class="form-control" id="password" required minlength="8" aria-describedby="passwordError">
+        <div class="progress mt-2" style="height: 6px;">
+          <div id="strengthBar" class="progress-bar"></div>
+        </div>
+        <small id="strengthText" class="text-muted">強度：</small>
+        <div id="passwordError" class="text-danger small"></div>
+      </div>
+
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">確認密碼</label>
+        <input type="password" class="form-control" id="confirmPassword" required aria-describedby="confirmError">
+        <div id="confirmError" class="text-danger small"></div>
+      </div>
+
+      <fieldset id="interests" class="mb-3">
+        <legend class="form-label">興趣（至少選一項）</legend>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="運動" id="sport">
+          <label class="form-check-label" for="sport">運動</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="音樂" id="music">
+          <label class="form-check-label" for="music">音樂</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="旅遊" id="travel">
+          <label class="form-check-label" for="travel">旅遊</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="閱讀" id="read">
+          <label class="form-check-label" for="read">閱讀</label>
+        </div>
+        <div id="interestError" class="text-danger small"></div>
+      </fieldset>
+
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="terms" required>
+        <label class="form-check-label" for="terms">我同意服務條款</label>
+        <div id="termsError" class="text-danger small"></div>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" id="submitBtn" class="btn btn-primary w-50 me-2">送出</button>
+        <button type="button" id="resetBtn" class="btn btn-secondary w-50">重設</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- 成功提示 Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">註冊成功</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p>恭喜！您已成功註冊會員。</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="signup_form.js" defer></script>
+</body>
+</html>

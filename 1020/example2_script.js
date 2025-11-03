@@ -41,7 +41,6 @@ btn.addEventListener('click', function() {
 
   var sum = numA + numB;
 
-  // 顯示結果（頁面 + alert）
   var message = numA + ' + ' + numB + ' = ' + sum;
   document.getElementById('sumResult').textContent = message;
   alert('結果是：' + message);

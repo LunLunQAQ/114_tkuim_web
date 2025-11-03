@@ -26,7 +26,6 @@ if (!raw) {
     }
     var avg = sum / nums.length;
 
-    // 延伸練習：最大值與最小值
     var max = nums[0];
     var min = nums[0];
     for (var k = 1; k < nums.length; k++) {
