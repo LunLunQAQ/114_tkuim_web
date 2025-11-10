@@ -1,5 +1,5 @@
 // practice6_dynamic_fields.js
-// 動態新增報名欄位 + 匯出、localStorage 暫存 + 視覺提示
+// 動態新增報名欄位並整合事件委派、即時驗證與送出攔截
 
 const form = document.getElementById('dynamic-form');
 const list = document.getElementById('participant-list');
@@ -11,7 +11,7 @@ const countLabel = document.getElementById('count');
 const maxParticipants = 5;
 let participantIndex = 0;
 
-// 🧩 產生參與者卡片
+//參與者卡片
 function createParticipantCard(name = '', email = '') {
   const index = participantIndex++;
   const wrapper = document.createElement('div');
@@ -40,14 +40,14 @@ function createParticipantCard(name = '', email = '') {
   return wrapper;
 }
 
-// 更新參與者數
+// 更新參與者數量
 function updateCount() {
   countLabel.textContent = list.children.length;
   addBtn.disabled = list.children.length >= maxParticipants;
   saveToLocal();
 }
 
-// 顯示錯誤訊息
+// 錯誤訊息
 function setError(input, message) {
   const error = document.getElementById(`${input.id}-error`);
   input.setCustomValidity(message);
@@ -55,7 +55,7 @@ function setError(input, message) {
   input.classList.toggle('is-invalid', !!message);
 }
 
-// 檢查欄位是否合法
+// 檢查欄位
 function validateInput(input) {
   const value = input.value.trim();
   if (!value) {
@@ -90,7 +90,7 @@ list.addEventListener('click', (event) => {
   updateCount();
 });
 
-// 即時驗證（blur）
+// 即時驗證
 list.addEventListener('blur', (event) => {
   if (event.target.matches('input')) validateInput(event.target);
 }, true);
@@ -103,7 +103,7 @@ list.addEventListener('input', (event) => {
 // 點擊新增
 addBtn.addEventListener('click', () => handleAddParticipant());
 
-// 送出檢查
+// 送出
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
@@ -143,7 +143,7 @@ resetBtn.addEventListener('click', () => {
   localStorage.removeItem('participants');
 });
 
-// 🗂 匯出目前名單（JSON）
+// 匯出目前名單（JSON）
 const exportBtn = document.createElement('button');
 exportBtn.type = 'button';
 exportBtn.className = 'btn btn-outline-success ms-2';
@@ -165,7 +165,7 @@ exportBtn.addEventListener('click', () => {
   URL.revokeObjectURL(url);
 });
 
-// 💾 localStorage 暫存
+// localStorage 暫存
 function saveToLocal() {
   const data = Array.from(list.querySelectorAll('.participant')).map((p) => ({
     name: p.querySelector('input[type="text"]').value,
@@ -174,7 +174,7 @@ function saveToLocal() {
   localStorage.setItem('participants', JSON.stringify(data));
 }
 
-// 初始化時從 localStorage 還原
+// 初始化時從localStorage還原
 window.addEventListener('DOMContentLoaded', () => {
   const saved = JSON.parse(localStorage.getItem('participants') || '[]');
   if (saved.length) saved.forEach((p) => handleAddParticipant(p.name, p.email));

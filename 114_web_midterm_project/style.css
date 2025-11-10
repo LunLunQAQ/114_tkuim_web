@@ -1,0 +1,142 @@
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --border-color: #dee2e6;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #adb5bd;
+    --border-color: #495057;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.income-card {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+}
+
+.expense-card {
+    background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+    color: white;
+}
+
+.transaction-item {
+    background-color: var(--bg-secondary);
+    border-left: 4px solid;
+    transition: all 0.3s;
+}
+
+.transaction-item.income {
+    border-left-color: #28a745;
+}
+
+.transaction-item.expense {
+    border-left-color: #dc3545;
+}
+
+.transaction-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: rotate(20deg);
+}
+
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.form-control, .form-select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: #667eea;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: #adb5bd;
+    opacity: 0.7;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+[data-theme="dark"] .text-secondary {
+    color: #adb5bd !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .transaction-item h5,
+[data-theme="dark"] .transaction-item small {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .transaction-item .text-secondary {
+    color: #adb5bd !important;
+}
+
+[data-theme="dark"] .form-label {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] label {
+    color: var(--text-primary);
+}
+
+.btn-delete {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.btn-delete:hover {
+    opacity: 1;
+}
