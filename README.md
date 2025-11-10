@@ -4,7 +4,7 @@
 - **專案名稱**：個人記帳本
 - **組員**：蔡宗倫
 - **學號**：412631268
-- **GitHub Pages**：`https://lunlunqaq.github.io/114_web_midterm_project/`
+- **GitHub Pages**：`https://lunlunqaq.github.io/114_tkuim_web/114_web_midterm_project/`
 
 ## 專案簡介
 實用的記帳網頁，可記錄收入與支出，自動計算餘額並保存資料。
