@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1763710313394,
+    "name": "蔡宗倫",
+    "email": "zxcvbnm940127@gmail.com",
+    "phone": "0901017736",
+    "password": "demoPass88",
+    "confirmPassword": "demoPass88",
+    "interests": [
+      "後端入門"
+    ],
+    "terms": true
+  },
+  {
+    "id": 1763711428933,
+    "name": "測試用",
+    "email": "test@example.com",
+    "phone": "0912345678",
+    "password": "demoPass88",
+    "confirmPassword": "demoPass88",
+    "interests": [
+      "後端入門"
+    ],
+    "terms": true
+  },
+  {
+    "id": 1763711600395,
+    "name": "測試",
+    "email": "a@a.com",
+    "phone": "0912345678",
+    "password": "123456",
+    "confirmPassword": "123456",
+    "interests": [
+      "測試"
+    ],
+    "terms": true
+  }
+]
