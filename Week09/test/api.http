@@ -1,0 +1,37 @@
+### 取得報名清單
+GET http://localhost:3001/api/signup
+Content-Type: application/json
+
+###
+
+### 正確報名資料
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "測試用",
+  "email": "test@example.com",
+  "phone": "0912345678",
+  "password": "demoPass88",
+  "confirmPassword": "demoPass88",
+  "interests": ["後端入門"],
+  "terms": true
+}
+
+###
+
+### 錯誤報名資料（密碼不符）
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "錯誤測試",
+  "email": "fail@example.com",
+  "phone": "0912345678",
+  "password": "demoPass88",
+  "confirmPassword": "wrongPass",
+  "interests": ["後端入門"],
+  "terms": true
+}
+
+###
