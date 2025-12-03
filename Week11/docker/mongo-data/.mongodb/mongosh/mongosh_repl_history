@@ -1,0 +1,6 @@
+db.participants.insertOne({name:"測試", email:"test@example.com", phone:"0912345678"})
+db.participants.getIndexes()
+db.participants.find().pretty()
+db.participants.getIndexes()
+db.participants.find().pretty()
+use week11

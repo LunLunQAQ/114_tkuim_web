@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  mongodb:
+    image: mongo:7
+    container_name: week11-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: abc21209
+      MONGO_INITDB_ROOT_PASSWORD: hny235007
+      MONGO_INITDB_DATABASE: week11
+    volumes:
+      - "C:/Users/zxcvb/projects/114_tkuim_web/Week11/docker/mongo-data:/data/db"
+      - "C:/Users/zxcvb/projects/114_tkuim_web/Week11/docker/mongo-init.js:/docker-entrypoint-initdb.d/init.js:ro"

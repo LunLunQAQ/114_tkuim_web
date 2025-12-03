@@ -1,0 +1,77 @@
+### Health Check
+GET http://localhost:3001/health
+
+### 建立報名
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "王小明",
+  "email": "xiaoming@example.com",
+  "phone": "0912345678"
+}
+
+### 測試重複 Email（應該會失敗）
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "李小華",
+  "email": "xiaoming@example.com",
+  "phone": "0923456789"
+}
+
+### 取得所有報名（第一頁，每頁 10 筆）
+GET http://localhost:3001/api/signup?page=1&limit=10
+
+### 取得第二頁
+GET http://localhost:3001/api/signup?page=2&limit=10
+
+### 更新電話（需替換實際 ID）
+PATCH http://localhost:3001/api/signup/YOUR_ID_HERE
+Content-Type: application/json
+
+{
+  "phone": "0987654321"
+}
+
+### 更新狀態
+PATCH http://localhost:3001/api/signup/YOUR_ID_HERE
+Content-Type: application/json
+
+{
+  "status": "confirmed"
+}
+
+### 刪除報名（需替換實際 ID）
+DELETE http://localhost:3001/api/signup/YOUR_ID_HERE
+
+### 批次建立測試資料
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "測試01",
+  "email": "test01@example.com",
+  "phone": "0911111111"
+}
+
+###
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "測試02",
+  "email": "test02@example.com",
+  "phone": "0922222222"
+}
+
+###
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "測試03",
+  "email": "test03@example.com",
+  "phone": "0933333333"
+}
