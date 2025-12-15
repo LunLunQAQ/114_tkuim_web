@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品詳細資訊</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <button onclick="window.location.href='index.html'" class="back-button">&larr; 返回產品列表</button>
+        
+        <div id="product-detail">
+            </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        // JavaScript 渲染邏輯
+        const detailContainer = document.getElementById('product-detail');
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id')); // 取得 URL 中的產品 ID
+
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            detailContainer.innerHTML = `
+                <h1 class="detail-title">${product.name}</h1>
+                <div class="detail-content">
+                    <img src="${product.image}" alt="${product.name}" class="detail-image">
+                    <div class="detail-info">
+                        <p class="detail-price">${product.price}</p>
+                        <h2 class="section-title">產品簡介</h2>
+                        <p class="description">${product.description}</p>
+                        <h2 class="section-title">詳細規格</h2>
+                        <pre class="details">${product.details}</pre>
+                    </div>
+                </div>
+            `;
+        } else {
+            detailContainer.innerHTML = '<p class="error-message">產品未找到！</p>';
+        }
+    </script>
+</body>
+</html>

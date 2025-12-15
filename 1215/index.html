@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品列表</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <h1>產品列表</h1>
+        <div id="product-list" class="grid-container">
+            </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        // JavaScript 渲染邏輯
+        const productListContainer = document.getElementById('product-list');
+
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            
+            // 設定點擊卡片跳轉到詳細資訊頁，並傳遞產品ID
+            productCard.onclick = () => {
+                window.location.href = `detail.html?id=${product.id}`;
+            };
+
+            productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <h2>${product.name}</h2>
+                    <p class="price">${product.price}</p>
+                    <a href="detail.html?id=${product.id}" class="detail-link">查看詳情 &rarr;</a>
+                </div>
+            `;
+            productListContainer.appendChild(productCard);
+        });
+    </script>
+</body>
+</html>
