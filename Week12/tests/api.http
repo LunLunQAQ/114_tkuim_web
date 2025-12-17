@@ -1,0 +1,37 @@
+### 1. 註冊
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### 2. 登入
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### 3. 查看記錄
+GET http://localhost:3000/api/signup
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### 4. 新增記錄
+POST http://localhost:3000/api/signup
+Authorization: Bearer YOUR_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "phone": "0912345678"
+}
+
+### 5. 刪除記錄
+DELETE http://localhost:3000/api/signup/RECORD_ID
+Authorization: Bearer YOUR_TOKEN_HERE

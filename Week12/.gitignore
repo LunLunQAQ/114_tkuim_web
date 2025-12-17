@@ -1,0 +1,26 @@
+# 環境變數
+.env
+.env.local
+.env.*.local
+
+# 依賴
+node_modules/
+package-lock.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系統
+.DS_Store
+Thumbs.db
+
+# 日誌
+*.log
+npm-debug.log*
+
+# 測試
+coverage/
+.nyc_output/
