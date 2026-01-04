@@ -1,0 +1,22 @@
+{
+  "name": "goldpeak-restaurant-backend",
+  "version": "1.0.0",
+  "description": "金鼎餐廳點餐系統 - 2026/1/4",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["restaurant", "ordering", "goldpeak"],
+  "author": "Goldpeak Restaurant",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
