@@ -13,7 +13,6 @@ export default function App() {
   const [menuForm, setMenuForm] = useState({ name: '', category: 'main', price: '', description: '' });
   const [orderForm, setOrderForm] = useState({ customerName: '', phone: '' });
 
-  // 1. 初始化 - 網頁載入時從 MongoDB 抓取資料
   useEffect(() => {
     fetchMenuItems();
     fetchOrders();
@@ -35,7 +34,6 @@ export default function App() {
     } catch (err) { console.error('抓取訂單失敗:', err); }
   };
 
-  // 2. 菜色管理 (新增/編輯/刪除)
   const saveMenuItem = async () => {
     if (!menuForm.name || !menuForm.price) return alert('請填寫完整資訊');
     const isEditing = !!editingMenu;
@@ -72,7 +70,6 @@ export default function App() {
     setShowMenuForm(true);
   };
 
-  // 3. 購物車邏輯
   const addToCart = (item) => {
     const existing = cart.find(c => c._id === item._id);
     if (existing) {
@@ -90,7 +87,6 @@ export default function App() {
     }
   };
 
-  // 4. 訂單管理 (核心：傳送顧客姓名與電話)
   const createOrder = async () => {
     if (!orderForm.customerName || !orderForm.phone || cart.length === 0) {
       return alert('請填寫顧客姓名、電話，並至少選擇一項餐點');
@@ -100,8 +96,8 @@ export default function App() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          customerName: orderForm.customerName, // 對接後端欄位
-          phone: orderForm.phone,               // 對接後端欄位
+          customerName: orderForm.customerName, 
+          phone: orderForm.phone,
           items: cart,
           totalPrice: cart.reduce((s, i) => s + (i.price * i.quantity), 0)
         })
@@ -115,7 +111,6 @@ export default function App() {
     } catch (err) { console.error('訂單失敗:', err); }
   };
 
-  // 修正：定義 updateOrderStatus 解決 Line 312 報錯
   const updateOrderStatus = async (id, status) => {
     try {
       const res = await fetch(`${API_URL}/orders/${id}`, {
