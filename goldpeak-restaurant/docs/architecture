@@ -1,0 +1,10 @@
+### **架構元件說明：**
+1.  **前端 (Presentation Layer)**:
+    * 技術：React.js / Vue.js + Tailwind CSS。
+    * 職責：渲染介面、收集使用者輸入、透過 Axios/Fetch 發送 API 請求。
+2.  **後端 (Application Layer)**:
+    * 技術：Node.js + Express。
+    * 職責：定義 API 路由、處理業務邏輯、與 MongoDB 進行資料互動。
+3.  **資料庫 (Data Layer)**:
+    * 技術：MongoDB (NoSQL)。
+    * 職責：以 JSON-like 格式 (BSON) 儲存任務資料。
