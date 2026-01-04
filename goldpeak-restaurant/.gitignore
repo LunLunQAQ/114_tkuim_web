@@ -1,0 +1,34 @@
+# 環境檔案
+.env
+.env.local
+.env.*.local
+
+# Node 模組
+node_modules/
+*/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# 生成文件
+/build
+/dist
+*/build
+*/dist
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# 其他
+*.log
+.cache/

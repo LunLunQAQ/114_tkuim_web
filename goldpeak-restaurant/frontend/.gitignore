@@ -1,0 +1,36 @@
+# 環境變數
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 依賴
+node_modules/
+/.pnp
+.pnp.js
+package-lock.json
+
+# 測試
+/coverage
+
+# 生成文件
+/build
+/dist
+
+# 日誌
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# 系統
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
